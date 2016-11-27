@@ -9,16 +9,12 @@
         <h1><a href="">Django Girls Blog</a> </h1>
     </div>
 
-    <div>
-        <p>published: 27.11.2016,11.09</p>
-        <h2><a href="">My first post</a> </h2>
-        <p>this is about how I make the dream come true, first step. done</p>
-    </div>
-
-    <div>
-        <p>published: 27.11.2016,11.09</p>
-        <h2><a href="">Second post</a> </h2>
-        <p>Mr Trump, who takes office in January, said he hoped Cubans could move towards a freer future.</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
